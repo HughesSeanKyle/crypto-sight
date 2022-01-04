@@ -20,12 +20,11 @@ a:hover{
 
 .app{
   display: flex;
-  overflow: hidden;
+  overflow: hidden
 }
 
 .navbar{
   flex: 0.2;
-  background-color: rgb(0, 21, 41);
 }
 
 .main{
@@ -37,6 +36,7 @@ a:hover{
   padding: 20px;
 }
 .nav-container{
+  width: 20%;
   position: fixed;
   left: 0;
   margin: 10px;
@@ -85,11 +85,25 @@ a:hover{
   .main{
       margin-left: 50px;
   }
+
+  .nav-container{
+    width: 24%;
+  }
 }
 
 @media screen and (max-width:1000px){
   .main{
       margin-left: 100px;
+  }
+
+  .nav-container{
+    width: 29%;
+  }
+}
+
+@media screen and (max-width:890px){
+  .nav-container{
+    width: 29.5%;
   }
 }
 
