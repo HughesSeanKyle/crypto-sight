@@ -3,7 +3,7 @@ import { Button, Menu, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import {
 	HomeOutlined,
-	MoneyCollectOutlined,
+	EyeOutlined,
 	BulbOutlined,
 	FundOutlined,
 	MenuOutlined,
@@ -54,8 +54,8 @@ const Navbar = () => {
 					<Menu.Item key={2} icon={<FundOutlined />}>
 						<Link to="/cryptocurrencies">Cryptocurrencies</Link>
 					</Menu.Item>
-					<Menu.Item key={3} icon={<MoneyCollectOutlined />}>
-						<Link to="/watchlist">Watchlist</Link>
+					<Menu.Item key={3} icon={<EyeOutlined />}>
+						<Link to="/watchlist">Watchlist (2 new items)</Link>
 					</Menu.Item>
 					<Menu.Item key={4} icon={<BulbOutlined />}>
 						<Link to="/news">News</Link>
