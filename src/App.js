@@ -24,6 +24,7 @@ const App = () => (
 			<Layout>
 				<div className="routes">
 					<Routes>
+						{/* Default Route => Home */}
 						<Route path="/" element={<Home />} />
 						<Route path="/watchlist" element={<Watchlist />} />
 						<Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
