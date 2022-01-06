@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import millify from 'millify';
 import { Link } from 'react-router-dom';
-import { Card, Row, Col, Input } from 'antd';
+import { Card, Row, Col, Input, Button } from 'antd';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import Loader from './Loader';
@@ -46,7 +46,13 @@ const Cryptocurrencies = ({ simplified }) => {
 						<Link key={currency.uuid} to={`/crypto/${currency.uuid}`}>
 							<Card
 								title={`${currency.rank}. ${currency.name}`}
-								extra={<img className="crypto-image" src={currency.iconUrl} />}
+								extra={
+									<img
+										className="crypto-image"
+										src={currency.iconUrl}
+										alt={currency.name}
+									/>
+								}
 								hoverable
 							>
 								<p>Price: {millify(currency.price)}</p>
@@ -54,6 +60,9 @@ const Cryptocurrencies = ({ simplified }) => {
 								<p>Daily Change: {currency.change}%</p>
 							</Card>
 						</Link>
+						<Button onClick={() => console.log('Added to watchlist')}>
+							+Add to watchlist
+						</Button>
 					</Col>
 				))}
 			</Row>
