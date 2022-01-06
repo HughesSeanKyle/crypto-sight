@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { cryptoApi } from '../services/cryptoApi';
 import { cryptoNewsApi } from '../services/cryptoNewsApi';
 import counterReducer from './counter';
+import watchlistReducer from './watchlist';
 
 export default configureStore({
 	reducer: {
@@ -12,5 +13,6 @@ export default configureStore({
 		[cryptoApi.reducerPath]: cryptoApi.reducer,
 		[cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer,
 		counter: counterReducer,
+		watchlist: watchlistReducer,
 	},
 });

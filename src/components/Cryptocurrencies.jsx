@@ -6,6 +6,7 @@ import { Card, Row, Col, Input, Button } from 'antd';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import { increment } from '../app/counter';
+import { addToWatchlist } from '../app/watchlist';
 import Loader from './Loader';
 
 const Cryptocurrencies = ({ simplified }) => {
@@ -64,7 +65,7 @@ const Cryptocurrencies = ({ simplified }) => {
 								<p>Daily Change: {currency.change}%</p>
 							</Card>
 						</Link>
-						<Button id="btn-padding" onClick={() => dispatch(increment())}>
+						<Button id="btn-padding" onClick={() => dispatch(addToWatchlist())}>
 							+Add to watchlist
 						</Button>
 					</Col>
