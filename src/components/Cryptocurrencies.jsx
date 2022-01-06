@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import millify from 'millify';
 import { Link } from 'react-router-dom';
 import { Card, Row, Col, Input, Button } from 'antd';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
+import { increment } from '../app/counter';
 import Loader from './Loader';
 
 const Cryptocurrencies = ({ simplified }) => {
@@ -13,6 +15,8 @@ const Cryptocurrencies = ({ simplified }) => {
 
 	const [cryptos, setCryptos] = useState();
 	const [searchTerm, setSearchTerm] = useState('');
+
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		setCryptos(cryptosList?.data?.coins);
@@ -60,7 +64,7 @@ const Cryptocurrencies = ({ simplified }) => {
 								<p>Daily Change: {currency.change}%</p>
 							</Card>
 						</Link>
-						<Button onClick={() => console.log('Added to watchlist')}>
+						<Button id="btn-padding" onClick={() => dispatch(increment())}>
 							+Add to watchlist
 						</Button>
 					</Col>
