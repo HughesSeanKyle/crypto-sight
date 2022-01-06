@@ -10,8 +10,8 @@ export const watchlistSlice = createSlice({
 	},
 	reducers: {
 		// Added with map statement inside cryptoDetails (Helper)
-		addToWatchlist: (state) => {
-			state.watchlist.push({ word: 'Hello' });
+		addToWatchlist: (state, payload) => {
+			state.watchlist = [payload, ...state.watchlist];
 		},
 		removeFromWatchlist: (state) => {
 			// state.count -= 1;

@@ -65,7 +65,10 @@ const Cryptocurrencies = ({ simplified }) => {
 								<p>Daily Change: {currency.change}%</p>
 							</Card>
 						</Link>
-						<Button id="btn-padding" onClick={() => dispatch(addToWatchlist())}>
+						<Button
+							id="btn-padding"
+							onClick={() => dispatch(addToWatchlist({ word: 'Hello' }))}
+						>
 							+Add to watchlist
 						</Button>
 					</Col>
