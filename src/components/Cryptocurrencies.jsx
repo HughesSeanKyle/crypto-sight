@@ -6,10 +6,15 @@ import { Card, Row, Col, Input, Button } from 'antd';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
 import { increment } from '../app/counter';
-import { addToWatchlist } from '../app/watchlist';
+import { addToWatchlist } from '../features/watchlist/watchlist';
 import Loader from './Loader';
 
 const Cryptocurrencies = ({ simplified }) => {
+	const testObj = {
+		id: 1,
+		name: 'Marie',
+	};
+
 	const count = simplified ? 10 : 100;
 
 	const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
@@ -67,7 +72,7 @@ const Cryptocurrencies = ({ simplified }) => {
 						</Link>
 						<Button
 							id="btn-padding"
-							onClick={() => dispatch(addToWatchlist({ word: 'Hello' }))}
+							onClick={() => dispatch(addToWatchlist(testObj))}
 						>
 							+Add to watchlist
 						</Button>

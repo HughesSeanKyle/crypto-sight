@@ -10,11 +10,14 @@ export const watchlistSlice = createSlice({
 	},
 	reducers: {
 		// Added with map statement inside cryptoDetails (Helper)
-		addToWatchlist: (state, payload) => {
-			state.watchlist = [payload, ...state.watchlist];
+		addToWatchlist: (state, action) => {
+			state.watchlist = [action.payload, ...state.watchlist];
 		},
-		removeFromWatchlist: (state) => {
-			// state.count -= 1;
+		removeFromWatchlist: (state, action) => {
+			state.watchlist.filter((crypto) => {
+				console.log(crypto);
+				// crypto !== action.payload;
+			});
 		},
 	},
 });
